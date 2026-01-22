@@ -1,0 +1,17 @@
+[
+  {
+    "nome": "Alfa Romeo Tonale",
+    "prezzo": "34.500",
+    "foto": "tonale.jpg"
+  },
+  {
+    "nome": "Fiat 500 Elettrica",
+    "prezzo": "19.900",
+    "foto": "fiat500.jpg"
+  },
+  {
+    "nome": "Jeep Renegade",
+    "prezzo": "21.800",
+    "foto": "renegade.jpg"
+  }
+]

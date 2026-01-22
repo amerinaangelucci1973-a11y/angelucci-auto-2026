@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Angelucci Auto | Roma - Via della Pisana</title>
+    <title>Angelucci Auto | Roma</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
         body { font-family: 'Montserrat', sans-serif; background-color: #000; color: white; }
-        .bg-glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); }
         .red-gradient { background: linear-gradient(90deg, #ff0000 0%, #b30000 100%); }
-        .nav-light { background-color: #f4f4f5; } /* Grigio chiaro per la Nav */
+        .nav-light { background-color: #f1f5f9; }
     </style>
 </head>
 <body>
 
     <nav class="nav-light border-b border-zinc-300 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 flex justify-between items-center h-20">
-            <img src="logo.png" alt="Angelucci Auto" class="h-12"> <div class="hidden md:flex space-x-8 font-bold uppercase text-xs tracking-widest text-zinc-800">
+            <img src="logo.png" alt="Angelucci Auto" class="h-12">
+            
+            <div class="hidden md:flex space-x-8 font-bold uppercase text-[10px] tracking-widest text-zinc-800">
                 <a href="#" class="text-red-600">Home</a>
-                <a href="#" class="hover:text-red-600 transition">Chi Siamo</a>
-                <a href="#" class="hover:text-red-600 transition">Vetrina</a>
+                <a href="lista-veicoli.html" class="hover:text-red-600 transition">Vetrina</a>
                 <a href="#" class="hover:text-red-600 transition">Servizi</a>
                 <a href="#" class="hover:text-red-600 transition">Contatti</a>
             </div>
@@ -38,58 +38,70 @@
     </nav>
 
     <section class="max-w-7xl mx-auto px-4 py-16">
-        <h2 class="text-3xl font-black uppercase italic mb-2 text-white">Le Nostre Occasioni</h2>
-        <div class="h-1 w-20 bg-red-600 mb-10"></div>
+        <div class="flex flex-col md:flex-row md:justify-between md:items-end mb-10">
+            <div>
+                <h2 class="text-3xl font-black uppercase italic mb-2">Le Nostre Occasioni</h2>
+                <div class="h-1 w-20 bg-red-600"></div>
+            </div>
+            <p class="text-zinc-400 text-sm mt-4 md:mt-0 font-bold uppercase tracking-tighter">
+                <i class="fa-solid fa-calendar-check text-red-600 mr-2"></i> Vendita solo su appuntamento (Via dei Trivulzio, 9)
+            </p>
+        </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800 shadow-xl group">
-                <img src="https://images.unsplash.com/photo-1617469767053-d3b503a0b982?w=600" class="w-full h-48 object-cover">
+            <div class="bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800 shadow-xl">
+                <img src="foto-auto-1.jpg" alt="Descrizione Auto" class="w-full h-56 object-cover bg-zinc-800"> 
                 <div class="p-6">
                     <h3 class="text-xl font-bold uppercase">Alfa Romeo Tonale</h3>
                     <p class="text-red-500 font-black text-lg mt-1">€ 34.500</p>
-                    
                     <div class="grid grid-cols-2 gap-2 mt-4">
-                        <a href="tel:0666166120" class="flex items-center justify-center bg-zinc-800 hover:bg-zinc-700 text-white py-3 rounded-xl text-xs font-bold transition">
+                        <a href="tel:0666166120" class="flex items-center justify-center bg-zinc-800 hover:bg-zinc-700 py-3 rounded-xl text-[10px] font-black transition">
                             <i class="fa-solid fa-phone mr-2 text-red-500"></i> CHIAMA
                         </a>
-                        <a href="https://wa.me/393246101100" class="flex items-center justify-center bg-green-600/10 hover:bg-green-600 text-green-500 hover:text-white py-3 rounded-xl text-xs font-bold transition border border-green-600/20">
-                            <i class="fa-brands fa-whatsapp mr-2"></i> W.A.
+                        <a href="https://wa.me/393246101100" class="flex items-center justify-center bg-green-600/20 hover:bg-green-600 text-green-500 hover:text-white py-3 rounded-xl text-[10px] font-black transition border border-green-600/30">
+                            <i class="fa-brands fa-whatsapp mr-2"></i> WHATSAPP
                         </a>
                     </div>
                 </div>
             </div>
 
-            <div class="bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800 shadow-xl group">
-                <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?w=600" class="w-full h-48 object-cover">
+            <div class="bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800 shadow-xl">
+                <img src="foto-auto-2.jpg" alt="Descrizione Auto" class="w-full h-56 object-cover bg-zinc-800">
                 <div class="p-6">
                     <h3 class="text-xl font-bold uppercase">Fiat 500 Elettrica</h3>
                     <p class="text-red-500 font-black text-lg mt-1">€ 19.900</p>
                     <div class="grid grid-cols-2 gap-2 mt-4">
-                        <a href="tel:0666166120" class="flex items-center justify-center bg-zinc-800 hover:bg-zinc-700 text-white py-3 rounded-xl text-xs font-bold transition">
+                        <a href="tel:0666166120" class="flex items-center justify-center bg-zinc-800 hover:bg-zinc-700 py-3 rounded-xl text-[10px] font-black transition">
                             <i class="fa-solid fa-phone mr-2 text-red-500"></i> CHIAMA
                         </a>
-                        <a href="https://wa.me/393246101100" class="flex items-center justify-center bg-green-600/10 hover:bg-green-600 text-green-500 hover:text-white py-3 rounded-xl text-xs font-bold transition border border-green-600/20">
-                            <i class="fa-brands fa-whatsapp mr-2"></i> W.A.
+                        <a href="https://wa.me/393246101100" class="flex items-center justify-center bg-green-600/20 hover:bg-green-600 text-green-500 hover:text-white py-3 rounded-xl text-[10px] font-black transition border border-green-600/30">
+                            <i class="fa-brands fa-whatsapp mr-2"></i> WHATSAPP
                         </a>
                     </div>
                 </div>
             </div>
 
-            <div class="bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800 shadow-xl group">
-                <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=600" class="w-full h-48 object-cover">
+            <div class="bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800 shadow-xl">
+                <img src="foto-auto-3.jpg" alt="Descrizione Auto" class="w-full h-56 object-cover bg-zinc-800">
                 <div class="p-6">
                     <h3 class="text-xl font-bold uppercase">Jeep Renegade</h3>
                     <p class="text-red-500 font-black text-lg mt-1">€ 21.800</p>
                     <div class="grid grid-cols-2 gap-2 mt-4">
-                        <a href="tel:0666166120" class="flex items-center justify-center bg-zinc-800 hover:bg-zinc-700 text-white py-3 rounded-xl text-xs font-bold transition">
+                        <a href="tel:0666166120" class="flex items-center justify-center bg-zinc-800 hover:bg-zinc-700 py-3 rounded-xl text-[10px] font-black transition">
                             <i class="fa-solid fa-phone mr-2 text-red-500"></i> CHIAMA
                         </a>
-                        <a href="https://wa.me/393246101100" class="flex items-center justify-center bg-green-600/10 hover:bg-green-600 text-green-500 hover:text-white py-3 rounded-xl text-xs font-bold transition border border-green-600/20">
-                            <i class="fa-brands fa-whatsapp mr-2"></i> W.A.
+                        <a href="https://wa.me/393246101100" class="flex items-center justify-center bg-green-600/20 hover:bg-green-600 text-green-500 hover:text-white py-3 rounded-xl text-[10px] font-black transition border border-green-600/30">
+                            <i class="fa-brands fa-whatsapp mr-2"></i> WHATSAPP
                         </a>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="mt-16 text-center">
+            <a href="lista-veicoli.html" class="inline-block red-gradient px-10 py-5 rounded-2xl font-black uppercase tracking-widest text-lg shadow-2xl shadow-red-600/30 hover:scale-105 transition">
+                <i class="fa-solid fa-list-ul mr-3"></i> Lista Veicoli in Vendita
+            </a>
         </div>
     </section>
 
@@ -100,45 +112,45 @@
                 <div class="text-center p-8 rounded-3xl bg-zinc-900 border border-zinc-800">
                     <i class="fa-solid fa-gas-pump text-red-600 text-4xl mb-4"></i>
                     <h4 class="font-bold uppercase mb-2">Installazione GPL</h4>
-                    <p class="text-zinc-500 text-sm">Specialisti nell'installazione e manutenzione impianti GPL Landi Renzo e BRC.</p>
+                    <p class="text-zinc-500 text-sm">Centro autorizzato per installazione e manutenzione impianti GPL.</p>
                 </div>
                 <div class="text-center p-8 rounded-3xl bg-zinc-900 border border-zinc-800">
-                    <i class="fa-solid fa-file-invoice-dollar text-red-600 text-4xl mb-4"></i>
+                    <i class="fa-solid fa-hand-holding-dollar text-red-600 text-4xl mb-4"></i>
                     <h4 class="font-bold uppercase mb-2">Finanziamenti</h4>
-                    <p class="text-zinc-500 text-sm">Piani di finanziamento personalizzati e tassi agevolati per l'acquisto del tuo veicolo.</p>
+                    <p class="text-zinc-500 text-sm">Soluzioni su misura per l'acquisto della tua auto in comode rate.</p>
                 </div>
                 <div class="text-center p-8 rounded-3xl bg-zinc-900 border border-zinc-800">
                     <i class="fa-solid fa-screwdriver-wrench text-red-600 text-4xl mb-4"></i>
                     <h4 class="font-bold uppercase mb-2">Officina</h4>
-                    <p class="text-zinc-500 text-sm">Centro assistenza plurimarche, diagnosi elettronica e tagliandi certificati.</p>
+                    <p class="text-zinc-500 text-sm">Assistenza tecnica specializzata e riparazioni plurimarche.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <footer class="bg-black py-16 px-4 border-t border-zinc-900">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
             <div>
-                <img src="logo.png" class="h-10 mb-6 grayscale brightness-200">
-                <p class="text-zinc-400 text-sm uppercase font-bold italic">Angelucci Auto S.r.l.</p>
-                <p class="text-zinc-600 text-xs mt-2 italic">Professionalità e trasparenza al vostro servizio dal 1990.</p>
+                <img src="logo.png" class="h-10 mb-6 grayscale brightness-200 mx-auto md:mx-0">
+                <p class="text-red-600 font-black uppercase text-sm italic">Angelucci Auto S.r.l.</p>
+                <p class="text-zinc-500 text-xs mt-2 uppercase">Esposizione e Vendita:</p>
+                <p class="text-white font-bold text-sm">Via dei Trivulzio, 9 - Roma</p>
+                <p class="text-zinc-500 text-[10px] mt-1">(Solo su appuntamento)</p>
             </div>
             <div>
-                <h5 class="text-red-600 font-black uppercase text-xs mb-4">Sede Roma (Pisana)</h5>
+                <h5 class="text-zinc-600 font-black uppercase text-xs mb-4">Sede Legale e Officina</h5>
                 <ul class="text-zinc-400 text-sm space-y-2">
-                    <li><i class="fa-solid fa-location-dot mr-2 text-red-600"></i> Via della Pisana, 316 - 00163 Roma</li>
-                    <li><i class="fa-solid fa-phone mr-2 text-red-600"></i> +39 06 66166120</li>
-                    <li><i class="fa-brands fa-whatsapp mr-2 text-green-500"></i> +39 324 6101100</li>
-                    <li><i class="fa-solid fa-envelope mr-2 text-red-600"></i> info@angelucciauto.it</li>
+                    <li><i class="fa-solid fa-location-dot mr-2 text-red-600"></i> Via della Pisana, 313 - Roma</li>
+                    <li><i class="fa-solid fa-phone mr-2 text-red-600"></i> 06 66166120</li>
+                    <li><i class="fa-brands fa-whatsapp mr-2 text-green-500"></i> 324 6101100</li>
                 </ul>
             </div>
             <div>
-                <h5 class="text-red-600 font-black uppercase text-xs mb-4">Seguici</h5>
-                <div class="flex space-x-4 text-2xl">
-                    <a href="https://www.facebook.com/angelucciauto" class="hover:text-red-600 transition"><i class="fab fa-facebook"></i></a>
-                    <a href="https://www.instagram.com/angelucciauto" class="hover:text-red-600 transition"><i class="fab fa-instagram"></i></a>
+                <h5 class="text-zinc-600 font-black uppercase text-xs mb-4">Social</h5>
+                <div class="flex justify-center md:justify-start space-x-4 text-2xl">
+                    <a href="https://facebook.com/angelucciauto" class="hover:text-red-600 transition"><i class="fab fa-facebook"></i></a>
+                    <a href="https://instagram.com/angelucciauto" class="hover:text-red-600 transition"><i class="fab fa-instagram"></i></a>
                 </div>
-                <p class="text-zinc-600 text-[10px] mt-8 uppercase">P.IVA 12345678901 | Privacy Policy</p>
             </div>
         </div>
     </footer>

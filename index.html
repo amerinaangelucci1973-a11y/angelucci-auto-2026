@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angelucci Auto | Vetrina Online</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #000; }
+        .car-card:hover { transform: translateY(-5px); transition: all 0.3s ease; }
+    </style>
+</head>
+<body class="text-white">
+
+    <nav class="bg-white py-4 px-6 flex justify-center sticky top-0 z-50 shadow-2xl">
+        <img src="logo.png" alt="Angelucci Auto Logo" class="h-12 md:h-16">
+    </nav>
+
+    <header class="py-12 px-6 text-center">
+        <h1 class="text-4xl md:text-5xl font-black uppercase italic tracking-tighter text-red-600">
+            Le Nostre Occasioni
+        </h1>
+        <p class="text-zinc-400 mt-2 font-light tracking-widest uppercase text-sm">Qualità e trasparenza a Roma</p>
+        <div class="h-1 w-24 bg-red-600 mx-auto mt-4"></div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 pb-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <div class="car-card bg-zinc-900 rounded-[2.5rem] overflow-hidden border border-zinc-800 flex flex-col">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?w=800" class="w-full h-64 object-cover" alt="Auto">
+                    <div class="absolute top-4 right-4 bg-red-600 text-white text-[10px] font-black px-4 py-1 rounded-full uppercase tracking-widest">
+                        Novità
+                    </div>
+                </div>
+                
+                <div class="p-6 flex-grow">
+                    <div class="flex justify-between items-start mb-2">
+                        <h2 class="text-2xl font-black uppercase italic">Audi A3 Sportback</h2>
+                        <span class="text-xl font-black text-white">€ 22.900</span>
+                    </div>
+                    <p class="text-zinc-500 font-bold text-xs uppercase mb-4">30 TDI Business - S-Tronic</p>
+
+                    <div class="grid grid-cols-3 gap-2 py-4 border-y border-zinc-800 my-4 text-center">
+                        <div>
+                            <p class="text-[10px] text-zinc-500 uppercase">Anno</p>
+                            <p class="text-sm font-bold text-zinc-200">2020</p>
+                        </div>
+                        <div class="border-x border-zinc-800">
+                            <p class="text-[10px] text-zinc-500 uppercase">KM</p>
+                            <p class="text-sm font-bold text-zinc-200">65.000</p>
+                        </div>
+                        <div>
+                            <p class="text-[10px] text-zinc-500 uppercase">Cambio</p>
+                            <p class="text-sm font-bold text-zinc-200">Aut.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col gap-2">
+                        <a href="https://wa.me/393331234567" class="flex items-center justify-center gap-2 bg-green-600 hover:bg-green-500 text-white py-3 rounded-xl font-black uppercase text-xs transition-all">
+                            <i class="fab fa-whatsapp text-lg"></i> Info WhatsApp
+                        </a>
+                        <a href="tel:+39061234567" class="flex items-center justify-center gap-2 bg-white text-black py-3 rounded-xl font-black uppercase text-xs transition-all">
+                            <i class="fa-solid fa-phone"></i> Chiama in sede
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+    </main>
+
+    <footer class="bg-zinc-950 border-t border-zinc-900 py-16 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <h3 class="text-2xl font-black uppercase italic text-white mb-2">Angelucci Domenico</h3>
+            <p class="text-zinc-500 text-sm mb-8 italic text-red-600 font-bold uppercase tracking-widest">Consulente Automobilistico</p>
+            
+            <div class="grid md:grid-cols-2 gap-8 text-left border-y border-zinc-900 py-8">
+                <div>
+                    <p class="text-red-600 font-black uppercase text-xs mb-2">La nostra sede</p>
+                    <p class="text-zinc-300 font-bold">Via Appia Nuova, 1234</p>
+                    <p class="text-zinc-300">00100 Roma (RM)</p>
+                </div>
+                <div>
+                    <p class="text-red-600 font-black uppercase text-xs mb-2">Contatti Diretti</p>
+                    <p class="text-zinc-300 font-bold italic">Telefono: +39 06 123 4567</p>
+                    <p class="text-zinc-300 italic">Email: info@angelucciauto.it</p>
+                </div>
+            </div>
+
+            <div class="flex justify-center gap-6 mt-10">
+                <a href="#" class="text-zinc-600 hover:text-white transition-colors text-2xl"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-zinc-600 hover:text-white transition-colors text-2xl"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="text-zinc-600 hover:text-white transition-colors text-2xl"><i class="fab fa-tiktok"></i></a>
+            </div>
+            
+            <p class="text-zinc-800 text-[10px] mt-12 uppercase tracking-[0.2em]">© 2026 Angelucci Auto - P.IVA 1234567890</p>
+        </div>
+    </footer>
+
+</body>
+</html>

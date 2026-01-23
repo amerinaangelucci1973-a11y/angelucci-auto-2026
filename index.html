@@ -60,24 +60,31 @@
     <div class="max-w-7xl mx-auto">
         <h2 class="text-center text-2xl font-black uppercase mb-12 italic text-white">I Nostri Servizi</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
             <div class="overflow-hidden rounded-3xl bg-zinc-900 border border-zinc-800 shadow-lg">
-                <img src="img/gpl.jpg" class="w-full h-48 object-cover" onerror="this.src='https://via.placeholder.com/400x250?text=Errore+File+gpl.jpg'">
-                <div class="p-6 text-center text-white">
-                    <h4 class="font-bold uppercase">Installazione GPL</h4>
+                <img src="img/gpl.jpg" class="w-full h-48 object-cover" onerror="this.src='https://via.placeholder.com/400x250?text=File+img/gpl.jpg+non+trovato'">
+                <div class="p-6 text-center">
+                    <h4 class="font-bold uppercase mb-2 text-white">Installazione GPL</h4>
+                    <p class="text-zinc-500 text-sm">Centro autorizzato impianti GPL.</p>
                 </div>
             </div>
+
             <div class="overflow-hidden rounded-3xl bg-zinc-900 border border-zinc-800 shadow-lg">
-                <img src="img/finanziamenti.jpg" class="w-full h-48 object-cover" onerror="this.src='https://via.placeholder.com/400x250?text=Errore+File+finanziamenti.jpg'">
-                <div class="p-6 text-center text-white">
-                    <h4 class="font-bold uppercase">Finanziamenti</h4>
+                <img src="img/finanziamenti.jpg" class="w-full h-48 object-cover" onerror="this.src='https://via.placeholder.com/400x250?text=File+img/finanziamenti.jpg+non+trovato'">
+                <div class="p-6 text-center">
+                    <h4 class="font-bold uppercase mb-2 text-white">Finanziamenti</h4>
+                    <p class="text-zinc-500 text-sm">Soluzioni su misura in comode rate.</p>
                 </div>
             </div>
+
             <div class="overflow-hidden rounded-3xl bg-zinc-900 border border-zinc-800 shadow-lg">
-                <img src="img/officina.jpg" class="w-full h-48 object-cover" onerror="this.src='https://via.placeholder.com/400x250?text=Errore+File+officina.jpg'">
-                <div class="p-6 text-center text-white">
-                    <h4 class="font-bold uppercase">Officina</h4>
+                <img src="img/officina.jpg" class="w-full h-48 object-cover" onerror="this.src='https://via.placeholder.com/400x250?text=File+img/officina.jpg+non+trovato'">
+                <div class="p-6 text-center">
+                    <h4 class="font-bold uppercase mb-2 text-white">Officina</h4>
+                    <p class="text-zinc-500 text-sm">Assistenza tecnica e tagliandi.</p>
                 </div>
             </div>
+
         </div>
     </div>
 </section>
@@ -109,6 +116,7 @@
 </footer>
 
 <script>
+    // Carica solo le auto. Se fallisce, non blocca il resto della pagina.
     fetch('auto.json')
         .then(res => res.json())
         .then(data => {
@@ -127,7 +135,7 @@
                 });
             }
         })
-        .catch(err => console.error("Errore critico:", err));
+        .catch(err => console.log("Errore JSON Auto:", err));
 </script>
 </section>
 </body>

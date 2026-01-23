@@ -1,0 +1,17 @@
+[
+  {
+    "titolo": "Installazione GPL",
+    "descrizione": "Centro autorizzato per installazione e manutenzione impianti GPL Landi Renzo e BRC.",
+    "foto": "img/gpl.jpg"
+  },
+  {
+    "titolo": "Finanziamenti",
+    "descrizione": "Piani personalizzati per l'acquisto della tua auto in comode rate mensili.",
+    "foto": "img/finanziamenti.jpg"
+  },
+  {
+    "titolo": "Officina",
+    "descrizione": "Assistenza tecnica qualificata, diagnosi computerizzata e tagliandi certificati.",
+    "foto": "img/officina.jpg"
+  }
+]

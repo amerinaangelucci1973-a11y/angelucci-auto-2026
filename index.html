@@ -62,7 +62,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             
             <div class="overflow-hidden rounded-3xl bg-zinc-900 border border-zinc-800 shadow-lg">
-                <img src="img/gpl.jpg" class="w-full h-48 object-cover" onerror="this.src='https://via.placeholder.com/400x250?text=Manca+gpl.jpg'">
+                <img src="img/gpl.jpg" class="w-full h-48 object-cover" onerror="this.src='https://via.placeholder.com/400x250?text=Controlla+Nome+gpl.jpg'">
                 <div class="p-6 text-center">
                     <h4 class="font-bold uppercase mb-2 text-white">Installazione GPL</h4>
                     <p class="text-zinc-500 text-sm">Centro autorizzato impianti GPL.</p>
@@ -70,7 +70,7 @@
             </div>
 
             <div class="overflow-hidden rounded-3xl bg-zinc-900 border border-zinc-800 shadow-lg">
-                <img src="img/finanziamenti.jpg" class="w-full h-48 object-cover" onerror="this.src='https://via.placeholder.com/400x250?text=Manca+finanziamenti.jpg'">
+                <img src="img/finanziamenti.jpg" class="w-full h-48 object-cover" onerror="this.src='https://via.placeholder.com/400x250?text=Controlla+Nome+finanziamenti.jpg'">
                 <div class="p-6 text-center">
                     <h4 class="font-bold uppercase mb-2 text-white">Finanziamenti</h4>
                     <p class="text-zinc-500 text-sm">Soluzioni su misura in comode rate.</p>
@@ -78,7 +78,7 @@
             </div>
 
             <div class="overflow-hidden rounded-3xl bg-zinc-900 border border-zinc-800 shadow-lg">
-                <img src="img/officina.jpg" class="w-full h-48 object-cover" onerror="this.src='https://via.placeholder.com/400x250?text=Manca+officina.jpg'">
+                <img src="img/officina.jpg" class="w-full h-48 object-cover" onerror="this.src='https://via.placeholder.com/400x250?text=Controlla+Nome+officina.jpg'">
                 <div class="p-6 text-center">
                     <h4 class="font-bold uppercase mb-2 text-white">Officina</h4>
                     <p class="text-zinc-500 text-sm">Assistenza tecnica e tagliandi.</p>
@@ -116,35 +116,30 @@
 </footer>
 
 <script>
-    // Carichiamo solo le auto dal file JSON
+    // Carichiamo le auto dal file JSON
     fetch('auto.json')
-        .then(response => {
-            if (!response.ok) throw new Error('File auto.json non trovato');
-            return response.json();
-        })
-        .then(data => {
-            const contenitore = document.getElementById('contenitore-auto');
+        .then(function(res) { return res.json(); })
+        .then(function(auto) {
+            var contenitore = document.getElementById('contenitore-auto');
             if (contenitore) {
-                // Svuota prima di caricare
-                contenitore.innerHTML = ''; 
-                // Prendi solo le prime 3
-                data.slice(0, 3).forEach(v => {
-                    contenitore.innerHTML += `
-                        <div class="bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800 shadow-xl">
-                            <img src="${v.foto}" class="w-full h-56 object-cover bg-zinc-800" onerror="this.src='https://via.placeholder.com/400x250?text=Foto+Auto+Mancante'">
-                            <div class="p-6">
-                                <h3 class="text-xl font-bold uppercase text-white">${v.nome}</h3>
-                                <p class="text-red-500 font-black text-lg mt-1">€ ${v.prezzo}</p>
-                                <div class="grid grid-cols-2 gap-2 mt-4">
-                                    <a href="tel:0666166120" class="flex items-center justify-center bg-zinc-800 py-3 rounded-xl text-[10px] font-black text-white">CHIAMA</a>
-                                    <a href="https://wa.me/393246101100" class="flex items-center justify-center bg-green-600/20 text-green-500 py-3 rounded-xl text-[10px] font-black border border-green-600/30">WHATSAPP</a>
-                                </div>
-                            </div>
-                        </div>`;
-                });
+                var html = '';
+                // Prendiamo solo le prime 3 auto
+                for (var i = 0; i < Math.min(auto.length, 3); i++) {
+                    var v = auto[i];
+                    html += '<div class="bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800 shadow-xl">' +
+                            '<img src="' + v.foto + '" class="w-full h-56 object-cover bg-zinc-800" onerror="this.src=\'https://via.placeholder.com/400x250?text=Foto+Mancante\'">' +
+                            '<div class="p-6">' +
+                            '<h3 class="text-xl font-bold uppercase text-white">' + v.nome + '</h3>' +
+                            '<p class="text-red-500 font-black text-lg mt-1">€ ' + v.prezzo + '</p>' +
+                            '<div class="grid grid-cols-2 gap-2 mt-4">' +
+                            '<a href="tel:0666166120" class="flex items-center justify-center bg-zinc-800 py-3 rounded-xl text-[10px] font-black text-white text-center">CHIAMA</a>' +
+                            '<a href="https://wa.me/393246101100" class="flex items-center justify-center bg-green-600/20 text-green-500 py-3 rounded-xl text-[10px] font-black border border-green-600/30 text-center">WHATSAPP</a>' +
+                            '</div></div></div>';
+                }
+                contenitore.innerHTML = html;
             }
         })
-        .catch(error => console.error('Errore:', error));
+        .catch(function(err) { console.error("Errore:", err); });
 </script>
 </section>
 </body>

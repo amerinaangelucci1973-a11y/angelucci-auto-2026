@@ -92,17 +92,17 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        // Carica AUTO
+        // Caricamento AUTO (che dici che funzionano)
         fetch('auto.json')
             .then(res => res.json())
             .then(auto => {
-                const cont = document.getElementById('contenitore-auto');
-                if (cont) {
-                    cont.innerHTML = '';
+                const contAuto = document.getElementById('contenitore-auto');
+                if (contAuto) {
+                    contAuto.innerHTML = '';
                     auto.slice(0, 3).forEach(v => {
-                        cont.innerHTML += `
+                        contAuto.innerHTML += `
                             <div class="bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800 shadow-xl">
-                                <img src="${v.foto}" class="w-full h-56 object-cover bg-zinc-800" onerror="this.src='https://via.placeholder.com/400x250?text=Foto+Mancante'">
+                                <img src="${v.foto}" class="w-full h-56 object-cover bg-zinc-800" onerror="this.src='https://via.placeholder.com/400x250?text=Auto+Non+Trovata'">
                                 <div class="p-6">
                                     <h3 class="text-xl font-bold uppercase text-white">${v.nome}</h3>
                                     <p class="text-red-500 font-black text-lg mt-1">€ ${v.prezzo}</p>
@@ -116,7 +116,7 @@
                 }
             });
 
-        // Carica SERVIZI
+        // Caricamento SERVIZI
         fetch('servizi.json')
             .then(res => res.json())
             .then(servizi => {
@@ -124,9 +124,13 @@
                 if (contServ) {
                     contServ.innerHTML = '';
                     servizi.forEach(s => {
+                        // Log di controllo per noi in console (premi F12 per vederlo)
+                        console.log("Carico foto servizio:", s.foto);
+                        
                         contServ.innerHTML += `
                             <div class="overflow-hidden rounded-3xl bg-zinc-900 border border-zinc-800 shadow-lg">
-                                <img src="${s.foto}" class="w-full h-48 object-cover" onerror="this.src='https://via.placeholder.com/400x250?text=Foto+Non+Trovata'">
+                                <img src="${s.foto}" class="w-full h-48 object-cover" 
+                                     onerror="this.src='https://via.placeholder.com/400x250?text=Errore:+${s.foto}'">
                                 <div class="p-6 text-center">
                                     <h4 class="font-bold uppercase mb-2 text-white">${s.titolo}</h4>
                                     <p class="text-zinc-500 text-sm">${s.descrizione}</p>
@@ -134,7 +138,7 @@
                             </div>`;
                     });
                 }
-            });
+            }).catch(err => console.error("Errore nel file servizi.json:", err));
     });
 </script>
 </section>

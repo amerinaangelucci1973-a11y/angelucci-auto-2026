@@ -59,7 +59,36 @@
 <section class="bg-zinc-950 py-20 px-4">
     <div class="max-w-7xl mx-auto">
         <h2 class="text-center text-2xl font-black uppercase mb-12 italic text-white">I Nostri Servizi</h2>
-        <div id="contenitore-servizi" class="grid grid-cols-1 md:grid-cols-3 gap-8"></div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <div class="overflow-hidden rounded-3xl bg-zinc-900 border border-zinc-800 shadow-lg">
+                <img src="img/gpl.jpg" class="w-full h-48 object-cover" 
+                     onerror="this.src='https://via.placeholder.com/400x250?text=NON+TROVATO:+img/gpl.jpg'">
+                <div class="p-6 text-center">
+                    <h4 class="font-bold uppercase mb-2 text-white">Installazione GPL</h4>
+                    <p class="text-zinc-500 text-sm">Centro autorizzato per installazione e manutenzione impianti GPL.</p>
+                </div>
+            </div>
+
+            <div class="overflow-hidden rounded-3xl bg-zinc-900 border border-zinc-800 shadow-lg">
+                <img src="img/finanziamenti.jpg" class="w-full h-48 object-cover" 
+                     onerror="this.src='https://via.placeholder.com/400x250?text=NON+TROVATO:+img/finanziamenti.jpg'">
+                <div class="p-6 text-center">
+                    <h4 class="font-bold uppercase mb-2 text-white">Finanziamenti</h4>
+                    <p class="text-zinc-500 text-sm">Piani personalizzati per l'acquisto della tua auto in comode rate.</p>
+                </div>
+            </div>
+
+            <div class="overflow-hidden rounded-3xl bg-zinc-900 border border-zinc-800 shadow-lg">
+                <img src="img/officina.jpg" class="w-full h-48 object-cover" 
+                     onerror="this.src='https://via.placeholder.com/400x250?text=NON+TROVATO:+img/officina.jpg'">
+                <div class="p-6 text-center">
+                    <h4 class="font-bold uppercase mb-2 text-white">Officina</h4>
+                    <p class="text-zinc-500 text-sm">Assistenza tecnica qualificata, diagnosi e tagliandi certificati.</p>
+                </div>
+            </div>
+
+        </div>
     </div>
 </section>
 
@@ -92,7 +121,7 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        // Caricamento AUTO (Occasioni)
+        // CARICA SOLO LE AUTO (Visto che funzionano)
         fetch('auto.json')
             .then(res => res.json())
             .then(auto => {
@@ -102,7 +131,7 @@
                     auto.slice(0, 3).forEach(v => {
                         cont.innerHTML += `
                             <div class="bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800 shadow-xl">
-                                <img src="${v.foto}" class="w-full h-56 object-cover bg-zinc-800" onerror="this.src='https://via.placeholder.com/400x250?text=Auto+Non+Trovata'">
+                                <img src="${v.foto}" class="w-full h-56 object-cover bg-zinc-800">
                                 <div class="p-6">
                                     <h3 class="text-xl font-bold uppercase text-white">${v.nome}</h3>
                                     <p class="text-red-500 font-black text-lg mt-1">€ ${v.prezzo}</p>
@@ -110,27 +139,6 @@
                                         <a href="tel:0666166120" class="flex items-center justify-center bg-zinc-800 py-3 rounded-xl text-[10px] font-black text-white">CHIAMA</a>
                                         <a href="https://wa.me/393246101100" class="flex items-center justify-center bg-green-600/20 text-green-500 py-3 rounded-xl text-[10px] font-black border border-green-600/30">WHATSAPP</a>
                                     </div>
-                                </div>
-                            </div>`;
-                    });
-                }
-            });
-
-        // Caricamento SERVIZI (Copia identica del sistema auto)
-        fetch('servizi.json')
-            .then(res => res.json())
-            .then(servizi => {
-                const contServ = document.getElementById('contenitore-servizi');
-                if (contServ) {
-                    contServ.innerHTML = '';
-                    servizi.forEach(s => {
-                        contServ.innerHTML += `
-                            <div class="overflow-hidden rounded-3xl bg-zinc-900 border border-zinc-800 shadow-lg">
-                                <img src="${s.foto}" class="w-full h-48 object-cover" 
-                                     onerror="this.src='https://via.placeholder.com/400x250?text=Manca+${s.foto}'">
-                                <div class="p-6 text-center">
-                                    <h4 class="font-bold uppercase mb-2 text-white">${s.titolo}</h4>
-                                    <p class="text-zinc-500 text-sm">${s.descrizione}</p>
                                 </div>
                             </div>`;
                     });

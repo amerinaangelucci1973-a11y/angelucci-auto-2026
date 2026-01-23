@@ -62,36 +62,32 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             
             <div class="overflow-hidden rounded-3xl bg-zinc-900 border border-zinc-800 shadow-lg">
-                <img src="img/gpl.jpg" class="w-full h-48 object-cover" 
-                     onerror="this.src='https://via.placeholder.com/400x250?text=NON+TROVATO:+img/gpl.jpg'">
+                <img src="img/gpl.jpg" class="w-full h-48 object-cover" onerror="this.src='https://via.placeholder.com/400x250?text=Manca+gpl.jpg'">
                 <div class="p-6 text-center">
                     <h4 class="font-bold uppercase mb-2 text-white">Installazione GPL</h4>
-                    <p class="text-zinc-500 text-sm">Centro autorizzato per installazione e manutenzione impianti GPL.</p>
+                    <p class="text-zinc-500 text-sm">Centro autorizzato impianti GPL.</p>
                 </div>
             </div>
 
             <div class="overflow-hidden rounded-3xl bg-zinc-900 border border-zinc-800 shadow-lg">
-                <img src="img/finanziamenti.jpg" class="w-full h-48 object-cover" 
-                     onerror="this.src='https://via.placeholder.com/400x250?text=NON+TROVATO:+img/finanziamenti.jpg'">
+                <img src="img/finanziamenti.jpg" class="w-full h-48 object-cover" onerror="this.src='https://via.placeholder.com/400x250?text=Manca+finanziamenti.jpg'">
                 <div class="p-6 text-center">
                     <h4 class="font-bold uppercase mb-2 text-white">Finanziamenti</h4>
-                    <p class="text-zinc-500 text-sm">Piani personalizzati per l'acquisto della tua auto in comode rate.</p>
+                    <p class="text-zinc-500 text-sm">Soluzioni su misura in comode rate.</p>
                 </div>
             </div>
 
             <div class="overflow-hidden rounded-3xl bg-zinc-900 border border-zinc-800 shadow-lg">
-                <img src="img/officina.jpg" class="w-full h-48 object-cover" 
-                     onerror="this.src='https://via.placeholder.com/400x250?text=NON+TROVATO:+img/officina.jpg'">
+                <img src="img/officina.jpg" class="w-full h-48 object-cover" onerror="this.src='https://via.placeholder.com/400x250?text=Manca+officina.jpg'">
                 <div class="p-6 text-center">
                     <h4 class="font-bold uppercase mb-2 text-white">Officina</h4>
-                    <p class="text-zinc-500 text-sm">Assistenza tecnica qualificata, diagnosi e tagliandi certificati.</p>
+                    <p class="text-zinc-500 text-sm">Assistenza tecnica e tagliandi.</p>
                 </div>
             </div>
 
         </div>
     </div>
 </section>
-
 <footer class="bg-black py-16 px-4 border-t border-zinc-900">
     <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
         <div>
@@ -120,31 +116,35 @@
 </footer>
 
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        // CARICA SOLO LE AUTO (Visto che funzionano)
-        fetch('auto.json')
-            .then(res => res.json())
-            .then(auto => {
-                const cont = document.getElementById('contenitore-auto');
-                if (cont) {
-                    cont.innerHTML = '';
-                    auto.slice(0, 3).forEach(v => {
-                        cont.innerHTML += `
-                            <div class="bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800 shadow-xl">
-                                <img src="${v.foto}" class="w-full h-56 object-cover bg-zinc-800">
-                                <div class="p-6">
-                                    <h3 class="text-xl font-bold uppercase text-white">${v.nome}</h3>
-                                    <p class="text-red-500 font-black text-lg mt-1">€ ${v.prezzo}</p>
-                                    <div class="grid grid-cols-2 gap-2 mt-4">
-                                        <a href="tel:0666166120" class="flex items-center justify-center bg-zinc-800 py-3 rounded-xl text-[10px] font-black text-white">CHIAMA</a>
-                                        <a href="https://wa.me/393246101100" class="flex items-center justify-center bg-green-600/20 text-green-500 py-3 rounded-xl text-[10px] font-black border border-green-600/30">WHATSAPP</a>
-                                    </div>
+    // Carichiamo solo le auto dal file JSON
+    fetch('auto.json')
+        .then(response => {
+            if (!response.ok) throw new Error('File auto.json non trovato');
+            return response.json();
+        })
+        .then(data => {
+            const contenitore = document.getElementById('contenitore-auto');
+            if (contenitore) {
+                // Svuota prima di caricare
+                contenitore.innerHTML = ''; 
+                // Prendi solo le prime 3
+                data.slice(0, 3).forEach(v => {
+                    contenitore.innerHTML += `
+                        <div class="bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800 shadow-xl">
+                            <img src="${v.foto}" class="w-full h-56 object-cover bg-zinc-800" onerror="this.src='https://via.placeholder.com/400x250?text=Foto+Auto+Mancante'">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold uppercase text-white">${v.nome}</h3>
+                                <p class="text-red-500 font-black text-lg mt-1">€ ${v.prezzo}</p>
+                                <div class="grid grid-cols-2 gap-2 mt-4">
+                                    <a href="tel:0666166120" class="flex items-center justify-center bg-zinc-800 py-3 rounded-xl text-[10px] font-black text-white">CHIAMA</a>
+                                    <a href="https://wa.me/393246101100" class="flex items-center justify-center bg-green-600/20 text-green-500 py-3 rounded-xl text-[10px] font-black border border-green-600/30">WHATSAPP</a>
                                 </div>
-                            </div>`;
-                    });
-                }
-            });
-    });
+                            </div>
+                        </div>`;
+                });
+            }
+        })
+        .catch(error => console.error('Errore:', error));
 </script>
 </section>
 </body>

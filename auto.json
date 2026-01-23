@@ -5,13 +5,13 @@
     "foto": "img/auto1.jpg"
   },
   {
-    "nome": "Fiat 500 Elettrica",
-    "prezzo": "19.900",
+    "nome": "space star",
+    "prezzo": "8.950",
     "foto": "img/auto2.jpg"
   },
   {
-    "nome": "Jeep Renegade",
-    "prezzo": "21.800",
+    "nome": "alfa romeo mito",
+    "prezzo": "5.950",
     "foto": "img/auto3.jpg"
   }
 ]

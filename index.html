@@ -64,6 +64,31 @@
     </div>
 </section>
 
+<script>
+    // Caricamento dei Servizi dal file JSON
+    fetch('servizi.json')
+        .then(response => {
+            if (!response.ok) throw new Error("File servizi.json non trovato");
+            return response.json();
+        })
+        .then(servizi => {
+            const contenitore = document.getElementById('contenitore-servizi');
+            servizi.forEach(s => {
+                contenitore.innerHTML += `
+                    <div class="overflow-hidden rounded-3xl bg-zinc-900 border border-zinc-800 shadow-lg">
+                        <img src="${s.foto}" alt="${s.titolo}" class="w-full h-48 object-cover" 
+                             onerror="this.src='https://via.placeholder.com/400x250?text=Immagine+Mancante'">
+                        <div class="p-6 text-center">
+                            <h4 class="font-bold uppercase mb-2 text-white">${s.titolo}</h4>
+                            <p class="text-zinc-500 text-sm">${s.descrizione}</p>
+                        </div>
+                    </div>
+                `;
+            });
+        })
+        .catch(err => console.error("Errore:", err));
+</script>
+
     <footer class="bg-black py-16 px-4 border-t border-zinc-900">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
             <div>

@@ -1,17 +1,17 @@
 [
   {
     "titolo": "Installazione GPL",
-    "descrizione": "Centro autorizzato per installazione e manutenzione impianti GPL.",
+    "descrizione": "Centro autorizzato impianti GPL.",
     "foto": "imagin/gpl.jpg"
   },
   {
     "titolo": "Finanziamenti",
-    "descrizione": "Soluzioni su misura per l'acquisto della tua auto in comode rate.",
+    "descrizione": "Soluzioni su misura in comode rate.",
     "foto": "imagin/finanziamenti.jpg"
   },
   {
     "titolo": "Officina",
-    "descrizione": "Assistenza tecnica specializzata e riparazioni plurimarche.",
+    "descrizione": "Assistenza tecnica e tagliandi.",
     "foto": "imagin/officina.jpg"
   }
 ]

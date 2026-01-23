@@ -91,58 +91,43 @@
 </footer>
 
 <script>
-    async function caricaDati() {
-        // CARICAMENTO AUTO
-        try {
-            const resAuto = await fetch('auto.json');
-            if (!resAuto.ok) throw new Error("Errore auto.json");
-            const auto = await resAuto.json();
+    // Funzione per caricare le AUTO (Il sistema che già funzionava)
+    fetch('auto.json')
+        .then(res => res.json())
+        .then(auto => {
             const contenitoreAuto = document.getElementById('contenitore-auto');
-            
-            if (contenitoreAuto && contenitoreAuto.children.length === 0) {
-                auto.slice(0, 3).forEach(vettura => {
-                    const card = `
-                        <div class="bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800 shadow-xl">
-                            <img src="${vettura.foto}" class="w-full h-56 object-cover bg-zinc-800" onerror="this.src='https://via.placeholder.com/400x250?text=Auto+Non+Trovata'">
-                            <div class="p-6">
-                                <h3 class="text-xl font-bold uppercase">${vettura.nome}</h3>
-                                <p class="text-red-500 font-black text-lg mt-1">€ ${vettura.prezzo}</p>
-                                <div class="grid grid-cols-2 gap-2 mt-4">
-                                    <a href="tel:0666166120" class="flex items-center justify-center bg-zinc-800 py-3 rounded-xl text-[10px] font-black text-white">CHIAMA</a>
-                                    <a href="https://wa.me/393246101100" class="flex items-center justify-center bg-green-600/20 text-green-500 py-3 rounded-xl text-[10px] font-black border border-green-600/30">WHATSAPP</a>
-                                </div>
+            auto.slice(0, 3).forEach(v => {
+                contenitoreAuto.innerHTML += `
+                    <div class="bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800 shadow-xl">
+                        <img src="${v.foto}" class="w-full h-56 object-cover bg-zinc-800" onerror="this.src='https://via.placeholder.com/400x250?text=Foto+Mancante'">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold uppercase">${v.nome}</h3>
+                            <p class="text-red-500 font-black text-lg mt-1">€ ${v.prezzo}</p>
+                            <div class="grid grid-cols-2 gap-2 mt-4">
+                                <a href="tel:0666166120" class="flex items-center justify-center bg-zinc-800 py-3 rounded-xl text-[10px] font-black text-white">CHIAMA</a>
+                                <a href="https://wa.me/393246101100" class="flex items-center justify-center bg-green-600/20 text-green-500 py-3 rounded-xl text-[10px] font-black border border-green-600/30">WHATSAPP</a>
                             </div>
-                        </div>`;
-                    contenitoreAuto.insertAdjacentHTML('beforeend', card);
-                });
-            }
-        } catch (e) { console.error(e); }
+                        </div>
+                    </div>`;
+            });
+        });
 
-        // CARICAMENTO SERVIZI
-        try {
-            const resServ = await fetch('servizi.json');
-            if (!resServ.ok) throw new Error("Errore servizi.json");
-            const servizi = await resServ.json();
+    // Funzione per caricare i SERVIZI (Stesso identico sistema)
+    fetch('servizi.json')
+        .then(res => res.json())
+        .then(servizi => {
             const contenitoreServizi = document.getElementById('contenitore-servizi');
-            
-            if (contenitoreServizi && contenitoreServizi.children.length === 0) {
-                servizi.forEach(s => {
-                    const card = `
-                        <div class="overflow-hidden rounded-3xl bg-zinc-900 border border-zinc-800 shadow-lg">
-                            <img src="${s.foto}" class="w-full h-48 object-cover" onerror="this.src='https://via.placeholder.com/400x250?text=Controlla+Cartella+Imagin'">
-                            <div class="p-6 text-center">
-                                <h4 class="font-bold uppercase mb-2 text-white">${s.titolo}</h4>
-                                <p class="text-zinc-500 text-sm">${s.descrizione}</p>
-                            </div>
-                        </div>`;
-                    contenitoreServizi.insertAdjacentHTML('beforeend', card);
-                });
-            }
-        } catch (e) { console.error(e); }
-    }
-
-    // Esegui una sola volta al caricamento
-    document.addEventListener('DOMContentLoaded', caricaDati);
+            servizi.forEach(s => {
+                contenitoreServizi.innerHTML += `
+                    <div class="overflow-hidden rounded-3xl bg-zinc-900 border border-zinc-800 shadow-lg">
+                        <img src="${s.foto}" class="w-full h-48 object-cover" onerror="this.src='https://via.placeholder.com/400x250?text=Controlla+Foto'">
+                        <div class="p-6 text-center">
+                            <h4 class="font-bold uppercase mb-2 text-white">${s.titolo}</h4>
+                            <p class="text-zinc-500 text-sm">${s.descrizione}</p>
+                        </div>
+                    </div>`;
+            });
+        });
 </script>
 </body>
 </html>
